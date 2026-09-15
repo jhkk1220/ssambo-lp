@@ -1,0 +1,544 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---------- 랜딩페이지 ---------- */
+
+.lp {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  padding-bottom: 90px; /* 하단 고정 CTA 공간 */
+  position: relative;
+}
+
+.lp-topbar {
+  background: #b8291f;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.lp-hero {
+  padding: 28px 20px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #fff6f0 0%, #fff 100%);
+}
+
+.lp-badge {
+  display: inline-block;
+  background: #ffe8d6;
+  color: #b8291f;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.lp-headline {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 6px;
+  word-break: keep-all;
+}
+
+.lp-headline2 {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  word-break: keep-all;
+}
+
+.lp-sub {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 6px;
+  word-break: keep-all;
+}
+
+.lp-note {
+  font-size: 11px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.lp-urgency {
+  margin: 14px 20px 0;
+  background: #fff3f1;
+  border: 1px solid #f6c9c3;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #b8291f;
+  text-align: center;
+  font-weight: 700;
+}
+
+.lp-section {
+  padding: 28px 20px;
+  border-top: 8px solid #f5f5f5;
+}
+
+.lp-section h2 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 16px;
+  word-break: keep-all;
+}
+
+.lp-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.lp-photo {
+  aspect-ratio: 1 / 1;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.lp-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+}
+
+.lp-chip {
+  flex: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lp-chip.active {
+  background: #b8291f;
+  border-color: #b8291f;
+  color: #fff;
+}
+
+.lp-review {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #444;
+}
+
+.lp-review img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.lp-empty {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 22px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.lp-offer {
+  background: #fff8f0;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.lp-offer ul {
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+
+.lp-offer li {
+  font-size: 13.5px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.lp-price {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.lp-worry {
+  font-size: 12.5px;
+  color: #777;
+  border-top: 1px dashed #e2cbb0;
+  padding-top: 12px;
+  margin-top: 12px;
+  word-break: keep-all;
+}
+
+.lp-closing {
+  text-align: center;
+  padding: 32px 20px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+
+.lp-cta-fixed {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: #fff;
+  border-top: 1px solid #eee;
+  z-index: 30;
+}
+
+.lp-cta-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #b8291f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lp-cta-btn:disabled {
+  opacity: 0.6;
+}
+
+/* ---------- 팝업(신청 흐름) ---------- */
+
+.lp-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lp-modal {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  padding: 24px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+.lp-modal-close {
+  float: right;
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.lp-modal-step-label {
+  font-size: 12px;
+  color: #999;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.lp-modal h3 {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  word-break: keep-all;
+}
+
+.lp-modal-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lp-modal-option:hover {
+  border-color: #b8291f;
+}
+
+.lp-modal-primary {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #b8291f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.lp-modal-secondary {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.lp-field {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14.5px;
+  margin-bottom: 10px;
+}
+
+.lp-modal-note {
+  font-size: 12.5px;
+  color: #888;
+  margin: 10px 0 4px;
+  word-break: keep-all;
+}
+
+.lp-error {
+  color: #b8291f;
+  font-size: 13px;
+  margin: -4px 0 10px;
+}
+
+/* ---------- 관리자 ---------- */
+
+.admin {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+.admin-login {
+  max-width: 360px;
+  margin: 80px auto;
+  padding: 0 16px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-tab {
+  flex: none;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #777;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-tab.active {
+  color: #b8291f;
+  border-bottom-color: #b8291f;
+}
+
+.admin-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.admin-card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.admin-explain {
+  font-size: 12.5px;
+  color: #888;
+  margin: 0 0 14px;
+}
+
+.admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.admin-stat {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.admin-stat .num {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.admin-stat .label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.admin-table th,
+.admin-table td {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 8px 6px;
+  text-align: left;
+}
+
+.admin-table input[type="number"],
+.admin-table input[type="text"] {
+  width: 70px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.admin-grey {
+  color: #bbb;
+}
+
+.admin-btn {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #b8291f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.admin-btn.secondary {
+  background: #eee;
+  color: #333;
+}
+
+.admin-input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.admin-field {
+  margin-bottom: 14px;
+}
+
+.admin-field label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.admin-loading,
+.admin-error {
+  font-size: 13px;
+  color: #999;
+  padding: 20px 0;
+}
+
+.admin-error {
+  color: #b8291f;
+}
+
